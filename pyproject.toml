@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexus-sdkQuestion"
+version = "0.1.0"
+description = "A Python SDK for the Nexus Question Generation API"
+authors = [
+    {name = "Your Name", email = "facebookups23@gmail.com"},
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    "requests>=2.25.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/SeasonLeague/nexus-sdk"
+Documentation = "https://github.com/SeasonLeague/nexus-sdk#readme"
+Repository = "https://github.com/SeasonLeague/nexus-sdk.git"
+"Bug Tracker" = "https://github.com/SeasonLeague/nexus-sdk/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "flake8>=3.9.0",
+    "black>=21.0",
+    "mypy>=0.910",
+]

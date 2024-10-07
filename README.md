@@ -1,7 +1,5 @@
-# Example usage in README.md:
-
-### Python:
-```
+### Python Usecase:
+```python
 from nexussdk5 import HackathonNexusAPI
 
 api = HackathonNexusAPI(api_key="your_gemini_api_key_here")
@@ -14,7 +12,7 @@ print(result)
 
 
 # FOR Validate answer
-```
+```python
 validation = api.check_answer(
     question="What is the capital of France?", #Need to pass the generated questions here 
     correct_answer="Paris", #Correct answer here
@@ -25,6 +23,6 @@ print(validation)
 
 
 ## Install with:
-```
+```bash
 pip install nexussdk5
 ```

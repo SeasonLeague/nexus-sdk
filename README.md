@@ -1,38 +1,30 @@
 # Example usage in README.md:
-"""
-## Error Handling
 
-The Nexus SDK uses a comprehensive error handling system. Here are the different types of exceptions:
+###Python:
+```
+from nexussdk5 import HackathonNexusAPI
 
-1. `NexusError`: Base exception class for all Nexus SDK errors
-2. `NexusAPIError`: Raised for errors returned by the Nexus API
-3. `NexusFileError`: Raised for file-related errors
-4. `NexusValidationError`: Raised for validation-related errors
-5. `NexusConfigError`: Raised for configuration errors
+api = HackathonNexusAPI(api_key="your_gemini_api_key_here")
 
-Example of handling different types of errors:
-
-```python
-from nexus import NexusSDK
-from nexus.exceptions import NexusAPIError, NexusFileError, NexusValidationError
-
-sdk = NexusSDK(api_key="your-api-key")
-
-try:
-    response = sdk.generate_questions(
-        files=["document.pdf"],
-        num_questions=5,
-        difficulty="medium"
-    )
-except NexusFileError as e:
-    print(f"File error: {e}")
-except NexusValidationError as e:
-    print(f"Validation error: {e}")
-except NexusAPIError as e:
-    print(f"API error (status {e.status_code}): {e}")
-except NexusError as e:
-    print(f"Other Nexus error: {e}")
+# Generate questions
+files = ["path/to/file1.pdf", "path/to/file2.jpg"]
+result = api.generate_questions(files, num_questions=5, difficulty="medium")
+print(result)
 ```
 
-This allows for fine-grained error handling in your applications.
-"""
+
+# FOR Validate answer
+```
+validation = api.check_answer(
+    question="What is the capital of France?", #Need to pass the generated questions here 
+    correct_answer="Paris", #Correct answer here
+    user_answer="London" #Pass user answer here too (The API will take care of the rest)
+)
+print(validation)
+```
+
+
+## Install with:
+```
+pip install nexussdk5
+```
